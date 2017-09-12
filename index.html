@@ -1,0 +1,148 @@
+<html>
+        <head>
+                <title>Self Portrait</title>
+                <style>
+        body {
+            background-color: black;
+            font-family: 'Lato';
+        }
+
+        #eye {
+            top: -300px;
+            bottom: 0px;
+            left: 370px;  
+            position: absolute;
+            margin: auto;
+        }
+
+        #mouth {
+            top: 450px;
+            bottom: 0px;
+            right:465px;
+            position: absolute;
+            margin: auto;
+        }
+
+        #nose{
+            top: 17px;
+            bottom: 0px;
+            left: 550px;
+            position: absolute;
+            margin: auto;    
+        }
+
+        #text{
+            top: -700px;
+            bottom: 0px;
+            left: 630px;
+            position: absolute;
+            margin: auto;
+        }
+
+        #black1{
+            top: 600px;
+            bottom: 0px;
+            left: 20px;
+            position: absolute;
+            margin: auto;
+        }
+
+        #black2{
+            top: -200px;
+            bottom: 0px;
+            left: 0px;  
+            position: absolute;
+            margin: auto;
+        }
+
+
+                </style>
+        </head>
+        <body>
+<!-- Add an “id” to the video tag so that we can access it easily in JavaScript -->
+               
+               
+                <video width="370" height="380"  id="nose">
+                        <source src="nose.mp4" type="video/mp4">
+                      
+                </video>
+                <video width="360" height="260"  id="eye">
+                        <source src="eye.mp4" type="video/mp4">
+                        
+                </video>
+                <video width="520" height="300"  id="mouth">
+                        <source src="mouth.mp4" type="video/mp4">
+                      
+                </video>
+                <img id="text" src="smile.png" style="width:200px; height:70px">
+                <img id="black1" src="black.jpg" style="width:500px; height:500px">
+                <img id="black2" src="black.jpg" style="width:460px; height:450px">
+<!-- When this button is clicked, call the doSomething function -->
+               
+                <script type="text/javascript">
+                        // Get Access to the Video Object
+                        var theVideoObject1 = document.getElementById("eye");
+                        var theVideoObject2 = document.getElementById("nose");
+                        var theVideoObject3 = document.getElementById("mouth");
+                        // Alert, just to make sure it isn’t null
+                        // alert(theVideoObject);
+
+                        play();
+
+
+                      function play(){
+                        eye.addEventListener('click',playEye); 
+                        eye.addEventListener('ended', toBeginningEye);
+                        nose.addEventListener('click',playNose);
+                        nose.addEventListener('ended', toBeginningNose);
+                        mouth.addEventListener('click',playMouth);
+                        mouth.addEventListener('ended', toBeginningMouth);
+                      }
+
+
+                        function toBeginningEye(){
+                            theVideoObject1.currentTime = 0; 
+                        }
+                        function toBeginningNose(){
+                            theVideoObject2.currentTime = 0; 
+                        }
+                        function toBeginningMouth(){
+                            theVideoObject3.currentTime = 0; 
+                        }
+
+                        function playEye() {
+                                // Change the width
+                                
+                                if (theVideoObject1.paused) {
+                                // If the video is paused, call play
+                                        theVideoObject1.play();
+                                } else {
+                                        // Otherwise, pause it
+                                        theVideoObject1.pause();
+                                }                
+                        }
+                           function playNose() {
+                                // Change the width
+                                
+                                if (theVideoObject2.paused) {
+                                // If the video is paused, call play
+                                        theVideoObject2.play();
+                                } else {
+                                        // Otherwise, pause it
+                                        theVideoObject2.pause();
+                                }                
+                        }
+                            function playMouth() {
+                                // Change the width
+                                
+                                if (theVideoObject3.paused) {
+                                // If the video is paused, call play
+                                        theVideoObject3.play();
+                                } else {
+                                        // Otherwise, pause it
+                                        theVideoObject3.pause();
+                                }                
+                        }
+                </script>
+        </body>
+</html>
